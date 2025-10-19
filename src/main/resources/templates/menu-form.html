@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>新規メニュー登録</title>
+</head>
+<body>
+	<h1 th:text="${menu.id} == null ? '新規メニュー登録' : 'メニュー編集'"></h1>
+
+	<form th:action="${menu.id} == null ? @{/menus} : @{/menus/update}" 
+		      th:object="${menu}" method="post">
+			  
+		<input type="hidden" th:field="*{id}" />
+
+		<div>
+			<label>メニュー名: </label>
+			<input type="text" th:field="*{menuName}"/>
+		</div>
+		
+		<h2>料理一覧（最大3件まで）</h2>
+		<div th:each="i, iterStat : ${#numbers.sequence(0,2)}">
+			<p>料理 [[${iterStat.index + 1}]]</p>
+					
+			<label>カテゴリー:</label>
+			<input type="text" th:field="*{dishes[__${iterStat.index}__].category}" /><br/>
+			
+			<label>料理名:</label>
+			<input type="text" th:field="*{dishes[__${iterStat.index}__].name}"/><br/>
+			
+			<label>材料:</label><br/>
+			<label><input type="checkbox" th:field="*{dishes[__${iterStat.index}__].allergies}" value="卵"/> 卵</label><br/>
+			<label><input type="checkbox" th:field="*{dishes[__${iterStat.index}__].allergies}" value="乳"/> 乳</label><br/>
+			<label><input type="checkbox" th:field="*{dishes[__${iterStat.index}__].allergies}" value="小麦"/> 小麦</label><br/>
+			<label><input type="checkbox" th:field="*{dishes[__${iterStat.index}__].allergies}" value="えび"/> えび</label><br/>
+			<label><input type="checkbox" th:field="*{dishes[__${iterStat.index}__].allergies}" value="かに"/> かに</label><br/>
+			<label><input type="checkbox" th:field="*{dishes[__${iterStat.index}__].allergies}" value="そば"/> そば</label><br/>
+			<label><input type="checkbox" th:field="*{dishes[__${iterStat.index}__].allergies}" value="落花生"/> 落花生</label><br/>
+			<label><input type="checkbox" th:field="*{dishes[__${iterStat.index}__].allergies}" value="くるみ"/> くるみ</label><br/>
+		</div>
+		<button type="submit" th:text="${menu.id} != null ? '更新' : '登録'"></button>
+	</form>
+
+	<a href="/menus">一覧に戻る</a>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>メニュー一覧</title>
+<style>
+  table { border-collapse: collapse; width: 100%; margin-top: 20px; }
+  th, td { border: 1px solid #ccc; padding: 8px; }
+  th { background: #f0f0f0; }
+  .dish-table { margin-left: 20px; width: 90%; }
+</style>
+</head>
+<body>
+	<h1>メニュー一覧</h1>
+
+	<table>
+		<thead>
+			<tr>
+				<th>ID</th>
+			    <th>メニュー名</th>
+				<th>料理一覧</th>
+				<th>操作</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="menu : ${menus}">
+				<td th:text="${menu.id}"></td>
+				<td th:text="${menu.menuName}"></td>
+				<td>
+					<table>
+						<thead>
+							<tr>
+								<th>カテゴリー</th>
+								<th>料理名</th>
+								<th>アレルギー食材</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr th:each="dish : ${menu.dishes}">
+								<td th:text="${dish.category}"></td>
+								<td th:text="${dish.name}"></td>
+								<td th:text="${#strings.listJoin(dish.allergies, ', ')}"></td>
+							</tr>
+						</tbody>
+					</table>
+				</td>
+				<td>
+					<a th:href="@{/menus/edit/{id}(id=${menu.id})}">編集</a>|
+					<a th:href="@{/menus/delete/{id}(id=${menu.id})}">削除</a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<a href="/menus/new">新規メニュー登録</a>
+</body>
+</html>

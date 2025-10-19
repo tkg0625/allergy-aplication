@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>新規予約</title>
+</head>
+<body>
+<h1>新規予約</h1>
+
+<form th:action="@{/reservations}" th:object="${reservationForm}" method="post">
+    <label>顧客名: <input type="text" th:field="*{customerName}" required /></label><br/>
+    <label>人数: <input type="number" th:field="*{numberOfPeople}" min="1" required /></label><br/>
+	<label>メニュー選択：</label>
+	<select th:field="*{menuId}" required>
+	    <option value="">-- メニューを選択 --</option>
+	    <option th:each="m : ${menus}" 
+	            th:value="${m.Id}" 
+	            th:text="${m.menuName}">
+	    </option>
+	</select>
+    <label>日時: <input type="datetime-local" th:field="*{reservationTime}" required /></label><br/>
+	
+	<p>アレルギー（該当するものを選択してください）:</p>
+	    <label><input type="checkbox" th:field="*{allergies}" value="卵"/> 卵</label><br/>
+	    <label><input type="checkbox" th:field="*{allergies}" value="乳"/> 乳</label><br/>
+	    <label><input type="checkbox" th:field="*{allergies}" value="小麦"/> 小麦</label><br/>
+	    <label><input type="checkbox" th:field="*{allergies}" value="えび"/> えび</label><br/>
+	    <label><input type="checkbox" th:field="*{allergies}" value="かに"/> かに</label><br/>
+	    <label><input type="checkbox" th:field="*{allergies}" value="そば"/> そば</label><br/>
+	    <label><input type="checkbox" th:field="*{allergies}" value="落花生"/> 落花生</label><br/>
+	    <label><input type="checkbox" th:field="*{allergies}" value="くるみ"/> くるみ</label><br/>
+
+	    <label>備考: <textarea th:field="*{memo}"></textarea></label><br/>
+    <button type="submit">登録</button>
+</form>
+
+<a href="/reservations">予約一覧に戻る</a>
+</body>
+</html>

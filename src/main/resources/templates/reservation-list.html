@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>予約一覧</title>
+</head>
+<body>
+<h1>予約一覧</h1>
+
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>顧客名</th>
+        <th>人数</th>
+        <th>日時</th>
+		<th>メニュー</th>
+		<th>アレルギー</th>
+		<th>一致アレルギー</th>
+        <th>メモ</th>
+    </tr>
+    <tr th:each="res : ${reservations}">
+        <td th:text="${res.id}"></td>
+        <td th:text="${res.customerName}"></td>
+        <td th:text="${res.numberOfPeople}"></td>
+        <td th:text="${#temporals.format(res.reservationTime, 'yyyy-MM-dd HH:mm')}"></td>
+		<td th:text="${res.menu != null ? res.menu.menuName : '（未選択）'}"></td>
+		<td th:text="${res.allergies}"></td>
+		<td th:text="${res.matchedAllergies}" th:if="${!res.matchedAllergies.isEmpty()}"
+		            style="color:red; font-weight:bold;"></td>
+        <td th:text="${res.memo}"></td>
+    </tr>
+</table>
+
+<a href="/reservations/new">新規予約</a>
+</body>
+</html>

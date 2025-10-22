@@ -14,4 +14,4 @@ RUN chmod +x gradlew
 RUN ./gradlew build -x test
 
 # 作成された jar を実行
-CMD ["java", "-jar", "build/libs/allergy-aplication-0.0.1-SNAPSHOT.jar"]
+CMD ["java", "-jar", "build/libs/allergy-0.0.1-SNAPSHOT.jar"]

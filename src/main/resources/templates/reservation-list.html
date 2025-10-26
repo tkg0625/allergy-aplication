@@ -18,6 +18,7 @@
 		<th>アレルギー</th>
 		<th>一致アレルギー</th>
         <th>メモ</th>
+		<th>操作</th>
     </tr>
     <tr th:each="res : ${reservations}">
         <td th:text="${res.id}"></td>
@@ -26,9 +27,15 @@
         <td th:text="${#temporals.format(res.reservationTime, 'yyyy-MM-dd HH:mm')}"></td>
 		<td th:text="${res.menu != null ? res.menu.menuName : '（未選択）'}"></td>
 		<td th:text="${res.allergies}"></td>
-		<td th:text="${res.matchedAllergies}" th:if="${!res.matchedAllergies.isEmpty()}"
-		            style="color:red; font-weight:bold;"></td>
+		<td>
+		            <span th:text="${res.matchedAllergies}"
+		                  th:if="${res.matchedAllergies != null and !#strings.isEmpty(res.matchedAllergies)}"
+		                  style="color:red; font-weight:bold;"></span>
+		        </td>
         <td th:text="${res.memo}"></td>
+		<td>
+			<a th:href="@{/reservations/delete/{id}(id=${res.id})}">削除</a>
+		</td>
     </tr>
 </table>
 

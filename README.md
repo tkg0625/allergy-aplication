@@ -11,10 +11,9 @@ https://allergy-aplication.onrender.com/menus
 
 下記フォームで予約をすると
 
-<img width="1920" height="941" alt="スクリーンショット (4)" src="https://github.com/user-attachments/assets/23449c07-2503-4705-9369-a5946a9eab31" />
-
-
 https://allergy-aplication.onrender.com/reservations
+
+<img width="1920" height="941" alt="スクリーンショット (4)" src="https://github.com/user-attachments/assets/23449c07-2503-4705-9369-a5946a9eab31" />
 
 このように一致したアレルギーを予約一覧で確認できます
 

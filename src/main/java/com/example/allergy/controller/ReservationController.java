@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -61,6 +62,12 @@ public class ReservationController {
             reservation.setMenu(menu);
         }
         reservationRepository.save(reservation);
+        return "redirect:/reservations";
+    }
+    // 削除
+    @GetMapping("/delete/{id}")
+    public String delete(@PathVariable Long id) {
+        reservationRepository.deleteById(id);
         return "redirect:/reservations";
     }
  }

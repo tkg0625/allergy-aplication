@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>ホーム | アレルギー予約管理</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: #f9fafb;
+            text-align: center;
+            margin-top: 100px;
+        }
+        h1 {
+            color: #333;
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            margin: 10px;
+            font-size: 18px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        .btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>アレルギー対応予約管理アプリ</h1>
+    <p>以下のメニューから選択してください。</p>
+
+    <a href="/menus" class="btn">メニュー登録</a>
+    <a href="/reservations" class="btn">予約登録</a>
+    <a href="/reservations/list" class="btn" style="background-color:#2196F3;">予約一覧</a>
+</body>
+</html>

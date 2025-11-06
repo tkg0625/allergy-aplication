@@ -2,16 +2,18 @@
 
 言語はJava、開発環境はEclips、フレームワークはspring boot、データベースはpostgrsqlを使いました
 
-使い方としましては下記フォームからメニューを登録後
+使い方としましては下記フォームを開き
 
-https://allergy-aplication.onrender.com/menus
+https://allergy-aplication.onrender.com
+
+<img width="1920" height="1200" alt="スクリーンショット (6)" src="https://github.com/user-attachments/assets/5ac53409-1907-4bcc-95b1-47b9ac097c3b" />
+
+メニュー一覧からメニューを登録します
 
 <img width="1920" height="945" alt="スクリーンショット (2)" src="https://github.com/user-attachments/assets/7ea7bed4-fb9f-4210-b0c8-e07b20b259be" />
 
+次に予約一覧から予約を登録します
 
-下記フォームで予約をすると
-
-https://allergy-aplication.onrender.com/reservations
 
 <img width="1920" height="941" alt="スクリーンショット (4)" src="https://github.com/user-attachments/assets/23449c07-2503-4705-9369-a5946a9eab31" />
 

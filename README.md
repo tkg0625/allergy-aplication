@@ -5,8 +5,8 @@
 使い方としましては下記フォームを開き
 
 https://allergy-aplication.onrender.com
+<img width="1920" height="941" alt="スクリーンショット (6)" src="https://github.com/user-attachments/assets/9ffb4653-d2bf-4c40-bc67-241a5902d7c0" />
 
-<img width="1920" height="1200" alt="スクリーンショット (6)" src="https://github.com/user-attachments/assets/5ac53409-1907-4bcc-95b1-47b9ac097c3b" />
 
 メニュー一覧からメニューを登録します
 

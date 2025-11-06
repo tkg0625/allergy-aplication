@@ -5,6 +5,7 @@
 使い方としましては下記フォームを開き
 
 https://allergy-aplication.onrender.com
+
 <img width="1920" height="941" alt="スクリーンショット (6)" src="https://github.com/user-attachments/assets/9ffb4653-d2bf-4c40-bc67-241a5902d7c0" />
 
 
